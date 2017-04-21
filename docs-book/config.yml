@@ -21,6 +21,6 @@ sections:
 
 template_variables:                             # optional
 
-book_title: Partner Services Template
+book_title: Sumo Logic Nozzle for PFC 
 book_repo: docs-book
 layout_repo: docs-layout

@@ -14,7 +14,6 @@
 @import "partials/search";
 @import "partials/sidenav";
 
-
 // ~LAYOUT
 // ===================================================
 .container {
@@ -377,4 +376,13 @@ category: basics
 // Hide back to top on homepage
 .index .to-top {
   display: none;
+}
+
+.partial-notice {
+  color: red;
+  font-size: $font-size-m;
+
+  ul {
+    font-size: $font-size-s;
+  }
 }

@@ -1,11 +1,46 @@
 ---
-title: Installing and Configuring YOUR-PRODUCT-NAME
+title: Installing and Configuring Sumo Logic Nozzle for PFC 
 owner: Partners
 ---
 
-This topic describes how to install and configure YOUR-PRODUCT-NAME.
+This topic describes how to install and configure Sumo Logic for PFC..
 
-##<a id='install'></a> Install and Configure YOUR-PRODUCT-NAME
+##<a id='install'></a> Install and Configure Sumo Logic
+
+Before you install the Sumo Logic Nozzle for PFC, you need to have an account on Sumo Logic. If you have an existing account on Sumo Logic you can skip to the next section.
+
+1. Go to https://www.sumologic.com and select **Free Trial**.
+2. Register your information for a free Trial Account.
+
+###<a id='createPFC'></a> Create the PFC Stystem AAccount  
+ 
+Complete the following steps to create a UAA user that gives the Nozzle access to the Firehose and Cloud Controller.
+
+1. Install the UAA Command Line Interface (CLI) tool, uaac:
+```$ gem install cf-uaac```
+
+1. Use the uaac target uaa.YOUR-SYSTEM-DOMAIN command to target your UAA server, for example:
+```$ uaac target uaa.sys.example.com```
+
+1. Record the uaa:admin:client_secret from either:
+The cf deployment manifest
+The Ops Manager Installation Dashboard, click the **Pivotal Elastic Runtime** tile, click **CCredentials, UAA** > **Admin Client Credentials**
+
+1. Authenticate to UAA using the client_secret from the previous step:
+```$  uaac token client get admin -s ADMIN-CLIENT-SECRET```
+
+1. Create a Honeycomb Nozzle user with a password of your choice:
+```$ uaac -t user add honeycomb-nozzle-user --password PASSWORD --emails na```
+
+1. Add the user to the Cloud Controller Admin Read-Only group:
+```$ uaac -t member add cloud_controller.admin_read_only honeycomb-nozzle-user``
+
+1. Add the user to the Doppler Firehose group:
+```$ uaac -t member add doppler.firehose honeycomb-nozzle-user```
+
+For information about creating a UAA user, see Creating and Managing Users with the UAA CLI.
+
+###<a id='createtile'></a> Install and Configure the Tile
 
 1. Download the product file from Pivotal Network.
 

@@ -1,50 +1,67 @@
 ---
-title: Sumo Logic Nozzle for PFC
+title: Sumo Logic Nozzle for PCF (Beta)
 owner: Partners
 ---
 
+<style>
+    .note.warning {
+        background-color: #fdd;
+        border-color: #fbb
+    }
+    .note.warning:before {
+        color: #f99;
+    }
+</style>
 
-This documentation describes the Sumo Logic Nozzle for Pivotal Cloud Foundry (PCF). Use this nozzle to monitor the health and performance of your Pivotal Cloud Foundry deployment using Sumo Logic. This integration connects to the Pivotal JMX Bridge, retrieves metrics about your Pivotal Cloud Foundry deployment, and sends them to Sumo Logic.
+<p class="note warning">
+<strong>IMPORTANT: </strong>
+The Sumo Logic Nozzle for Pivotal Cloud Foundry (PCF) tile is currently in beta and is intended for evaluation and test purposes only. Do not use this product in a PCF production environment.
+</p>
 
-
+This documentation describes the Sumo Logic Nozzle for PCF tile.
 
 ## <a id='overview'></a>Overview
 
-Sumo Logic is a cloud-native, machine data analytics service for log management
-and time series metrics.
+Sumo Logic Nozzle for PCF enables you to monitor the health and performance of your PCF deployment. The nozzle connects to the PCF JMX Bridge, retrieves metrics related to your PCF deployment, and sends them to Sumo Logic, a machine data analytics service for log management and time series metrics.
 
-
-Sumo Logic includes the following key features:
-
-* Build, run, and secure your Cloud Foundry environment
-* Provide monitoring and troubleshooting for your Cloud Foundry environment.
-
- 
 ## <a id="snapshot"></a>Product Snapshot
 
-<dl>
-<dt>Sumo Logic details:</dt>
-<dd><strong>Version</strong>: v0.1 </dd>
-<dd><strong>Release date</strong>: May 1, 2017 </dd>
-<dd><strong>Software component version</strong>: v0.1</dd>
-<dd><strong>Compatible Ops Manager version(s)</strong>: v1.9 and higher</dd>
-<dd><strong>Compatible Elastic Runtime version(s)</strong>: v1.9 and higher</dd>
-<dd><strong>vSphere support?</strong> YES</dd>
-<dd><strong>OpenStack support?</strong> YES</dd>
-<dd><strong>AWS support?</strong> YES/dd>
-</dl>
+The following table provides version and version-support information about Sumo Logic Nozzle for PCF:
+
+<table class="nice">
+    <th>Element</th>
+    <th>Details</th>
+    <tr>
+        <td>Version</td>
+        <td>v0.1</td>
+    </tr>
+    <tr>
+        <td>Release date</td>
+        <td>May 1, 2017</td>
+    </tr>
+    <tr>
+        <td>Compatible Ops Manager version(s)</td>
+        <td>v1.9 and higher</td>
+    </tr>
+    <tr>
+        <td>Compatible Elastic Runtime version(s)</td>
+        <td>v1.9 and higher</td>
+    </tr>
+    <tr>
+        <td>IaaS support</td>
+        <td>AWS, OpenStack, and vSphere</td>
+    </tr>
+</table>
 
 ## <a id="reqs"></a>Requirements
 
+Sumo Logic Nozzle for PCF has the following requirements:
 
-Sumo Logic has the following requirements:
-
-+ Administrative access to a Pivotal Cloud Foundry deployment
++ Administrative access to your PCF deployment
 
 + Pivotal Ops Metrics (JMX Bridge) installed
 
-+ Sumo Logic account 
-
++ A Sumo Logic account
 
 ## <a id="feedback"></a>Feedback
 
@@ -52,5 +69,4 @@ Please send any bugs, feature requests, or questions to the [Pivotal Cloud Found
 
 ## <a id='license'></a>License
 
-See our [Service License Agreement](https://www.sumologic.com/terms-conditions/service-license-agreement/)
-
+See our [Service License Agreement](https://www.sumologic.com/terms-conditions/service-license-agreement/).

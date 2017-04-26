@@ -1,30 +1,31 @@
 ---
-title: Installing and Configuring Sumo Logic Nozzle for PFC 
+title: Installing and Configuring Sumo Logic Nozzle for PCF
 owner: Partners
 ---
 
-This topic describes how to install and configure Sumo Logic for PFC..
+This topic describes how to install and configure Sumo Logic Nozzle for Pivotal Cloud Foundry (PCF).
 
-##<a id='install'></a> Install and Configure Sumo Logic
+##<a id='prereqs'></a>Prerequisites
 
-Before you install the Sumo Logic Nozzle for PFC, you need to have an account on Sumo Logic. If you have an existing account on Sumo Logic you can skip to the next section.
+Before you install the Sumo Logic Nozzle for PCF tile, you need to have a [Sumo Logic](https://www.sumologic.com) account.
 
-1. Go to https://www.sumologic.com and select **Free Trial**.
-2. Register your information for a free Trial Account.
-
-###<a id='createPFC'></a> Create the PFC Stystem AAccount  
+##<a id='createPFC'></a> Create a PCF System Account
  
-Complete the following steps to create a UAA user that gives the Nozzle access to the Firehose and Cloud Controller.
+Follow the steps below to create a UAA user that gives the nozzle access to the [Firehose](https://docs.pivotal.io/pivotalcf/1-10/loggregator/architecture.html#firehose) and [Cloud Controller](https://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/cloud-controller.html).
 
-1. Install the UAA Command Line Interface (CLI) tool, uaac:
-```$ gem install cf-uaac```
+1. Install the UAA Command Line Interface (CLI) tool, `uaac`:
 
-1. Use the uaac target uaa.YOUR-SYSTEM-DOMAIN command to target your UAA server, for example:
-```$ uaac target uaa.sys.example.com```
+    <pre class="terminal">$ gem install cf-uaac</pre>
 
-1. Record the uaa:admin:client_secret from either:
-The cf deployment manifest
-The Ops Manager Installation Dashboard, click the **Pivotal Elastic Runtime** tile, click **CCredentials, UAA** > **Admin Client Credentials**
+1. Target your UAA server by running the `uaac target uaa.YOUR-SYSTEM-DOMAIN` command. See the following example:
+
+    <pre class="terminal">$ uaac target uaa.sys.example.com</pre>
+
+1. Record `uaa:admin:client_secret` from one of the following:
+    * The Cloud Foundry deployment manifest
+    * The Ops Manager Installation Dashboard
+
+    click the **Pivotal Elastic Runtime** tile, click **CCredentials, UAA** > **Admin Client Credentials**
 
 1. Authenticate to UAA using the client_secret from the previous step:
 ```$  uaac token client get admin -s ADMIN-CLIENT-SECRET```
@@ -40,7 +41,7 @@ The Ops Manager Installation Dashboard, click the **Pivotal Elastic Runtime** ti
 
 For information about creating a UAA user, see Creating and Managing Users with the UAA CLI.
 
-###<a id='createtile'></a> Install and Configure the Tile
+##<a id='createtile'></a> Install and Configure the Tile
 
 1. Download the product file from Pivotal Network.
 

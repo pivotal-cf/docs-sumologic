@@ -7,9 +7,9 @@ This topic describes how to install and configure Sumo Logic Nozzle for Pivotal 
 
 ##<a id='prereqs'></a>Prerequisites
 
-Before you install the Sumo Logic Nozzle for PCF tile, you need to have a [Sumo Logic](https://www.sumologic.com) account.
+Before you install the Sumo Logic Nozzle for PCF tile, you need to have a [Sumo Logic](https://www.sumologic.com/pricing/) account.
 
-##<a id='create'></a> Create a PCF System Account
+##<a id='create'></a>Create a UAA User for the Nozzle
  
 Follow the steps below to create a UAA user that gives the nozzle access to the [Firehose](https://docs.pivotal.io/pivotalcf/1-10/loggregator/architecture.html#firehose) and [Cloud Controller](https://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/cloud-controller.html).
 
@@ -31,15 +31,6 @@ Follow the steps below to create a UAA user that gives the nozzle access to the 
 1. Authenticate to UAA using `client_secret` obtained in the previous step:
     <pre class="terminal">$  uaac token client get admin -s ADMIN-CLIENT-SECRET</pre>
 
-1. Create a Honeycomb Nozzle user with a password of your choice:
-```$ uaac -t user add honeycomb-nozzle-user --password PASSWORD --emails na```
-
-1. Add the user to the Cloud Controller Admin Read-Only group:
-```$ uaac -t member add cloud_controller.admin_read_only honeycomb-nozzle-user``
-
-1. Add the user to the Doppler Firehose group:
-```$ uaac -t member add doppler.firehose honeycomb-nozzle-user```
-
 For more information about creating a UAA user, see [Creating and Managing Users with the UAA CLI](http://docs.pivotal.io/pivotalcf/1-10/adminguide/uaa-user-management.html).
 
 ##<a id='create-tile'></a> Install and Configure the Tile
@@ -51,9 +42,13 @@ For more information about creating a UAA user, see [Creating and Managing Users
 1. Under the **Import a Product** button, click **+** next to the version number of Sumo Logic Nozzle for PCF. This adds the tile to your staging area.
 
 1. Click the newly added Sumo Logic Nozzle for PCF tile.
+![alt text](/images/SumoTile.png "Sumo Tile")
 
-1. **This portion of the procedure should tell the users how to configure the newly added tile by walking them through the sections. Which fields should they fill out? What are the different checkboxes? Include relevant screenshots here.** 
+1. Select  Settings > Sumo Logic Settings and enter the endpoint you configured when you configured PFC as an HTTP Source for Sumo Logic.
+![alt text](/images/SumoLogicSettings.png "Sumo Logic Settings")
+
+1. In the Sumo Logic Post Minimum Delay field, enter a time in microseconds for the delay.
 
 1. Click **Save**.
 
-1. Return to the Ops Manager Installation Dashboard and click **Apply Changes**.
+1. Return to the Ops Manager Installation Dashboard and click **Apply Changes**. The installation should take a few minutes to complete. You will see a message confirming your changes have been applied.

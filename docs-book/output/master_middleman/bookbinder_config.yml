@@ -5,9 +5,9 @@
 :subnav_templates:
   sumologic: sumologic_subnav
 :template_variables: 
-:local_repo_dir: "/Users/stacy/docs-sumologic"
+:local_repo_dir: "/Users/stacy/workspace/docs-sumologic"
 :workspace: !ruby/object:Pathname
-  path: "/Users/stacy/docs-sumologic/docs-book/output/master_middleman/source"
+  path: "/Users/stacy/workspace/docs-sumologic/docs-book/output/master_middleman/source"
 :feedback_enabled: 
 :repo_link_enabled: true
 :repo_links:

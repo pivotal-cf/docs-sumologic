@@ -7,50 +7,36 @@ This topic describes how to install and configure Sumo Logic Nozzle for Pivotal 
 
 ##<a id='prereqs'></a>Prerequisites
 
-Before you install the Sumo Logic Nozzle for PCF tile, you need to have a [Sumo Logic](https://www.sumologic.com/pricing/) account.
+Before you install the Sumo Logic Nozzle for PCF tile:
 
-##<a id='create'></a>Create a UAA User for the Nozzle
- 
-Follow the steps below to create a UAA user that gives the nozzle access to the [Firehose](https://docs.pivotal.io/pivotalcf/1-10/loggregator/architecture.html#firehose) and [Cloud Controller](https://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/cloud-controller.html).
-
-1. Install the UAA Command Line Interface (CLI) tool, `uaac`:
-
-    <pre class="terminal">$ gem install cf-uaac</pre>
-
-1. Target your UAA server by running the `uaac target uaa.YOUR-SYSTEM-DOMAIN` command. See the following example:
-
-    <pre class="terminal">$ uaac target uaa.sys.example.com</pre>
-
-1. Record `uaa:admin:client_secret` from one of the following:
-<br><br>
-    * The Cloud Foundry deployment manifest
-    * The Ops Manager Installation Dashboard
-
-    To retrieve `client_secret` from Ops Manager, click the **Pivotal Elastic Runtime**, navigate to the **Credentials** tab, and locate the **Admin Client Credentials** entry in the **UAA** section.
-
-1. Authenticate to UAA using `client_secret` obtained in the previous step:
-    <pre class="terminal">$  uaac token client get admin -s ADMIN-CLIENT-SECRET</pre>
-
-For more information about creating a UAA user, see [Creating and Managing Users with the UAA CLI](http://docs.pivotal.io/pivotalcf/1-10/adminguide/uaa-user-management.html).
+* You need to have a [Sumo Logic](https://www.sumologic.com/pricing/) account.
+* You must also configure PCF as an [HTTP Source](https://help.sumologic.com/?cid=5084) in Sumo Logic. 
 
 ##<a id='create-tile'></a> Install and Configure the Tile
 
-1. Download the product file from Pivotal Network.
 
-1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file. 
-
-1. Under the **Import a Product** button, click **+** next to the version number of Sumo Logic Nozzle for PCF. This adds the tile to your staging area.
-
-1. Click the newly added Sumo Logic Nozzle for PCF tile.
+1. Click the newly added Sumo Logic Nozzle for PCF tile to access the configuration settings.
 
     <%= image_tag("SumoTile1.png") %>
 
-1. Select  **Settings** > **Sumo Logic Settings** and enter the endpoint that you configured when specifying PCF as an HTTP Source for Sumo Logic.
+1. **Assign AZs and Networks**: 
 
-    <%= image_tag("SumologicSettings.png") %>
+	2. Choose placement.
+	3. Click **Save**.
 
-1. In the **Sumo Logic Post Minimum Delay** field, enter a time in microseconds for the delay.
+1.  **Sumo Logic Settings**: 
+     2. Enter the endpoint that you configured when specifying PCF as an [HTTP Source](https://help.sumologic.com/?cid=5084) for Sumo Logic.
 
-1. Click **Save**.
+        <%= image_tag("SumologicSettings.png") %>
+     1. In **Sumo Logic Post Minimum Delay**, enter a time in microseconds for the post minimum delay. The default is 2000ms.
+     2. (Optional) Create a local Sumo Logic Category if you are using more than one 
 
+     1. Click **Save**.
+2. **Cloud Foundry Settings**:
+     3. In **Sumo Logic Post Minimum Delay**, 
+
+
+
+
+##<a id='applychanges'></a> Apply Changes
 1. Return to the Ops Manager Installation Dashboard and click **Apply Changes**. The installation can take a few minutes to complete. You will see a message confirming your changes have been applied.

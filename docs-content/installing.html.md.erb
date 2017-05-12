@@ -46,9 +46,10 @@ Before you install the Sumo Logic Nozzle for PCF tile:
      8. **Skip SSL Validation**: This option should only be checked if you are on a known and trusted dev enviroment and have expired certificates. Do not enable this option for a production system.
      9. **Verbose in 'LogMessage' event**: Enable this option if you need more detail than the default logging information, 'timestamp', 'cf_app_guid', 'Msg'. This is what a log message looks like when you 
      <%= image_tag("SumoLogicVerbose.png") %>
-     10.**Nozzle Polling Period**: Set how frequently the Nozzle polls the Cloud Foundary Nozzle for data. We recommend 5000ms.
+     10. **Nozzle Polling Period**: Set how frequently the Nozzle polls the Cloud Foundary Nozzle for data. We recommend 5000ms.
+     11. Click **Save**.
 1. **Errands**: Leave settings as default.
-2. **Resource Config**: we recommend you set both deploy-all and delete-all VM Type setting the Automatic Micro.
+2. **Resource Config**: For both deploy-all and delete-all, use VM Type setting the Automatic Micro.
 3. **Setmcell**: Ensure the proper stemcell is available.
 
 

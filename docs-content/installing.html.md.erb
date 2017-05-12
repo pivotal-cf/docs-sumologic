@@ -43,7 +43,7 @@ Before you install the Sumo Logic Nozzle for PCF tile:
      6. **Log Events Batch Size**: Choose how many messages need to occur before they are sent to Sumo Logic.
      7. **Comma separated list of events you would like (Default is "LogMessage")**: List any additional events (no spaces between events) that you want to be included, such as Error, Container Metric, HttpStart, HttpStop, HttpStartStop, LogMessage, ValueMetric, or CounterEvent.  
      8. **Skip SSL Validation**: This option should only be checked if you are on a known and trusted dev enviroment and have expired certificates. Do not enable this option for a production system.
-     9. **Verbose in 'LogMessage' event**: Enable this option if you need more detail than the default logging information, 'timestamp', 'cf_app_guid', 'Msg'. This is what a log message looks like when you 
+     9. **Verbose in 'LogMessage' event**: Enable this option if you need more detail than the default logging information, 'timestamp', 'cf_app_guid', 'Msg'. This is what a log message looks like when you turn on verbose:
      <%= image_tag("SumoLogicVerbose.png") %>
      10. **Nozzle Polling Period**: Set how frequently the Nozzle polls the Cloud Foundary Nozzle for data. We recommend 5000ms.
      11. Click **Save**.

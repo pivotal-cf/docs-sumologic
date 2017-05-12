@@ -13,7 +13,7 @@ This documentation describes the Sumo Logic Nozzle for PCF tile.
 
 Sumo Logic Nozzle for PCF can help you:
 
-* View global maps to monitor the overall health and security of your PCF resources
+* View dashboards to monitor the overall health and security of your PCF resources
 * Drill down from alerts to see key performance metrics and audit logs for PCF and your custom apps
 * Store PCF audit details in a fully secure SOC 2, HIPAA, and PCI-compliant environment
 
@@ -23,14 +23,12 @@ without having to install a Sumo Logic agent in your Cloud Foundry environment.
 
 The Sumo Logic Nozzle is a written in Go and is based on the Firehose-to-Syslog Nozzle. 
 
-The nozzle filters out messages per your tile configuration and securely sends those logs and metrics 
-to a cloud-based HTTP API in the Sumo Logic SaaS service. 
+The nozzle filters out messages per your tile configuration and securely sends those logs and metrics to a cloud-based HTTP API in the Sumo Logic SaaS service. 
 The tile allows you to configure the batching intervals, toggle verbose log mode, and add additional metadata to the logs and metrics.
 The only configuration you need to do on the Sumo Logic platform is to enable the HTTP API (an HTTP Source), and copy out the URL. 
 The rest of the processing is done for you.  
 As soon as you deploy the tile, you are able to query the logs and metrics and monitor the log stream using Live Tail. 
 With the GA release of the tile, Sumo Logic intends to release a set of predefined dashboards.
-
 
 ## <a id='overview'></a>Overview of Sumo Logic
 

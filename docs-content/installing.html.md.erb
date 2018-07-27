@@ -16,48 +16,48 @@ Before you install the Sumo Logic Nozzle for PCF tile:
 
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/sumologic-nozzle).        
          
-1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.         
+2. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.         
             
-1. Under the **Import a Product** button, click **+** next to the version number of Sumo Logic Nozzle for PCF. This adds the tile to your staging area.
+3. Under the **Import a Product** button, click **+** next to the version number of Sumo Logic Nozzle for PCF. This adds the tile to your staging area.
 
-1. Click the newly added Sumo Logic Nozzle for PCF tile to access the configuration settings.
+4. Click the newly added Sumo Logic Nozzle for PCF tile to access the configuration settings.
 
     <%= image_tag("SumoTile1.png") %>
 
-1. **Assign AZs and Networks**: 
+5. **Assign AZs and Networks**: 
 
 	2. Choose placement.
 	3. Click **Save**.
 
-1.  **Sumo Logic Settings**: 
-     2. **Sumo Logic Endpoint**: Enter the endpoint that you configured when specifying PCF as an [HTTP Source](https://help.sumologic.com/?cid=5084) for Sumo Logic.
+6.  **Sumo Logic Settings**: 
 
-        <%= image_tag("SumologicSettings.png") %>
-     1. **Sumo Logic Post Minimum Delay**: Enter a time in milliseconds for the post minimum delay. The default is 2000ms.
-     2. (Optional) **Sumo Logic Category**: Specify a source category to call data with that specific metadata tag. For example, `MyOrg/MyCategory`. 
-     3. (Optional) **Sumo Logic Name**: Specify a source name locally to distinguish it from the configured HTTP Source configuration and prevent metadata overwrites if you have more than one use for that source. 
-        For example, `MyPivotalApp`. 
-     4. (Optional) **Sumo Logic Host**: If you have a local file source, you can specify a hostname. If you are using a Remote Host do not use this field.  
-     5. (Optional) **Custom Metadata**: Add custom metadata to the JSON. For example, `key1:value1,key2:value2`.
-     6. (Optional) **Include Only Matching Filter**: Include only designated events.
-     7. (Optional) **Exclude Always Filter**: Exclude specific events that are not pertinent to your search such as `cf\_app\_name:sumo-logic-nozzle-0.1.0`.
-     1. Click **Save**.
-2. **Cloud Foundry Settings**:
-     3. **Cloud Foundry API Endpoint**: Enter your endpoint.
-     <%= image_tag("SumoNozzlePCFSettings.png") %>
-     4. **Cloud Foundry User**: Specify your Cloud Foundry username.
-     5. **Cloud Foundry Password**: Enter Cloud Foundry password.
-     6. **Log Events Batch Size**: Choose how many messages need to occur before they are sent to Sumo Logic.
-     7. **Comma separated list of events you would like (Default is "LogMessage")**: List any additional events (no spaces between events) that you want to be included, such as Error, Container Metric, HttpStart, HttpStop, HttpStartStop, LogMessage, ValueMetric, or CounterEvent.  
-     8. **Skip SSL Validation**: This option should only be checked if you are on a known and trusted dev environment and have expired certificates. 
+	1.  **Sumo Logic Endpoint**: Select Add, then enter the endpoint that you configured when specifying PCF as an [HTTP Source](https://help.sumologic.com/?cid=5084) for Sumo Logic. You can setup multiple endpoints with different settings (more below).
+	<%= image_tag("SumologicSettings.png") %> 
+	2. **Sumo Logic Post Minimum Delay**: Enter a time in milliseconds for the post minimum delay. The default is 2000ms.
+	3. (Optional) **Sumo Logic Category**: Specify a source category to call data with that specific metadata tag. For example, `MyOrg/MyCategory`.
+	3. (Optional) **Sumo Logic Name**: Specify a source name locally to distinguish it from the configured HTTP Source configuration and prevent metadata overwrites if you have more than one use for that source. 
+	For example, `MyPivotalApp`.
+	4. (Optional) **Sumo Logic Host**: If you have a local file source, you can specify a hostname. If you are using a Remote Host do not use this field. 
+	5. (Optional) **Custom Metadata**: Add custom metadata to the JSON. For example, `key1:value1,key2:value2`.
+	6. (Optional) **Include Only Matching Filter**: Include only designated events.
+	7. (Optional) **Exclude Always Filter**: Exclude specific events that are not pertinent to your search such as `cf\_app\_name:sumo-logic-nozzle-0.1.0`.
+	8. Click **Save**.
+7. **Cloud Foundry Settings**:
+	 1. **Cloud Foundry API Endpoint**: Enter your [API endpoint](https://docs.pivotal.io/pivotalcf/2-1/opsguide/api-endpoint.html).
+	 <%= image_tag("SumoNozzlePCFSettings.png") %>
+	 2. **Cloud Foundry User**: Specify your Cloud Foundry username.
+	 3. **Cloud Foundry Password**: Enter Cloud Foundry password.
+     4. **Log Events Batch Size**: Choose how many messages need to occur before they are sent to Sumo Logic.
+     5. **Comma separated list of events you would like (Default is "LogMessage")**: List any additional events (no spaces between events) that you want to be included, such as Error, Container Metric, HttpStart, HttpStop, HttpStartStop, LogMessage, ValueMetric, or CounterEvent.  
+     6. **Skip SSL Validation**: This option should only be checked if you are on a known and trusted dev environment and have expired certificates. 
         Do not enable this option for a production system.
-     9. **Verbose in 'LogMessage' event**: Enable this option if you need more detail than the default logging information, `timestamp`, `cf_app_guid`, `Msg`. 
+     7. **Verbose in 'LogMessage' event**: Enable this option if you need more detail than the default logging information, `timestamp`, `cf_app_guid`, `Msg`. 
         This is what a log message looks like when you turn on verbose:
      <%= image_tag("SumoLogicVerbose.png") %>
-     10. **Nozzle Polling Period**: Set how frequently the Nozzle polls the Cloud Foundry Nozzle for data. Sumo Logic recommends 5000ms.
-     11. Click **Save**.
-1. **Errands**: Leave settings as default.
-2. **Resource Config**: For both deploy-all and delete-all, use VM Type setting the Automatic Micro.
-3. **Stemcell**: Ensure the proper stemcell is available.
-1. Return to the Ops Manager Installation Dashboard.
-2. Click **Apply Changes**. The installation can take a few minutes to complete. You will see a message confirming your changes have been applied.
+     8. **Nozzle Polling Period**: Set how frequently the Nozzle polls the Cloud Foundry Nozzle for data. Sumo Logic recommends 5000ms.
+     9. Click **Save**.
+8. **Errands**: Leave settings as default.
+9. **Resource Config**: For both deploy-all and delete-all, use VM Type setting the Automatic Micro.
+10. **Stemcell**: Ensure the proper stemcell is available.
+11. Return to the Ops Manager Installation Dashboard.
+12. Click **Apply Changes**. The installation can take a few minutes to complete. You will see a message confirming your changes have been applied.

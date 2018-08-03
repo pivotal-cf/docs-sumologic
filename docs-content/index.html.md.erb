@@ -5,7 +5,8 @@ owner: Partners
 
 This documentation describes the Sumo Logic Nozzle for PCF tile.
 
-## <a id='nozzle-overview'></a>Overview of Sumo Logic Nozzle for PCF
+
+## <a id='nozzle-overview'></a> Overview of Sumo Logic Nozzle for PCF
 
 Sumo Logic Nozzle for PCF can help you:
 
@@ -13,23 +14,21 @@ Sumo Logic Nozzle for PCF can help you:
 * Drill down from alerts to see key performance metrics and audit logs for PCF and your custom apps
 * Store PCF audit details in a fully secure SOC 2, HIPAA, and PCI-compliant environment
 
-This Sumo Logic nozzle for [PCF Firehose](https://docs.pivotal.io/tiledev/nozzle.html) allows operations teams and 
-app owners to monitor and troubleshoot the PCF platform and apps in real time, 
-without having to install a Sumo Logic agent in their Cloud Foundry environment.
+This Sumo Logic nozzle for [PCF Firehose](https://docs.pivotal.io/tiledev/nozzle.html) allows operations teams and app owners to monitor and troubleshoot the PCF platform and apps in real time, without having to install a Sumo Logic agent in their Cloud Foundry environment.
 
-The nozzle filters out messages per your tile configuration and securely sends those logs and metrics 
-to an HTTP API in the Sumo Logic SaaS service. The tile allows you to configure batching intervals, toggle verbose logging mode, and add metadata to your logs and metrics.
+The nozzle filters out messages per your tile configuration and securely sends those logs and metrics to an HTTP API in the Sumo Logic SaaS service. The tile allows you to configure batching intervals, toggle verbose logging mode, and add metadata to your logs and metrics.
 
 The only configuration you need to do on the Sumo Logic platform is to enable the HTTP API (an HTTP Source) and record the URL. After you deploy the tile, you are able to query the logs and metrics and monitor the log stream using Live Tail.
 
 The Sumo Logic nozzle is written in Go and is based on the [firehose-to-syslog](https://github.com/cloudfoundry-community/firehose-to-syslog) nozzle.
 
-## <a id='overview'></a>Overview of Sumo Logic
 
-Sumo Logic is a secure, cloud-based machine data analytics service delivering real-time insights from logs, metrics, and event data across the entire app lifecycle and stack. 
-With Sumo Logic, you can unify log data and time-series metrics and leverage machine learning analysis to uncover real-time insights into your app operations and security.
+## <a id='overview'></a> Overview of Sumo Logic
 
-## <a id="snapshot"></a>Product Snapshot
+Sumo Logic is a secure, cloud-based machine data analytics service delivering real-time insights from logs, metrics, and event data across the entire app lifecycle and stack. With Sumo Logic, you can unify log data and time-series metrics and leverage machine learning analysis to uncover real-time insights into your app operations and security.
+
+
+## <a id="snapshot"></a> Product Snapshot
 
 The following table provides version and version-support information about Sumo Logic Nozzle for PCF:
 
@@ -58,7 +57,8 @@ The following table provides version and version-support information about Sumo 
     </tr>
 </table>
 
-## <a id="reqs"></a>Requirements
+
+## <a id="reqs"></a> Requirements
 
 Sumo Logic Nozzle for PCF has the following requirements:
 
@@ -66,9 +66,11 @@ Sumo Logic Nozzle for PCF has the following requirements:
 
 + A [Sumo Logic account](https://www.sumologic.com/pricing/)
 
-## <a id="feedback"></a>Feedback
+
+## <a id="feedback"></a> Feedback
 
 Please send any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to support@sumologic.com.
+
 
 ## <a id='license'></a>License
 

@@ -1,17 +1,17 @@
 ---
-title: Installing and Configuring Sumo Logic Nozzle for Pivotal Platform
+title: Installing and Configuring Sumo Logic Nozzle for VMware Tanzu
 owner: Partners
 ---
 
-This topic describes how to install and configure Sumo Logic Nozzle for Pivotal Platform.
+This topic describes how to install and configure Sumo Logic Nozzle for VMware Tanzu.
 
 
 ## <a id='prereqs'></a> Prerequisites
 
-Before you install the Sumo Logic Nozzle for Pivotal Platform tile:
+Before you install the Sumo Logic Nozzle for VMware Tanzu tile:
 
 * You must have a [Sumo Logic](https://www.sumologic.com/pricing/) account.
-* You must configure Pivotal Platform as an [HTTP Source](https://help.sumologic.com/?cid=5084) in Sumo Logic. 
+* You must configure VMware Tanzu as an [HTTP Source](https://help.sumologic.com/?cid=5084) in Sumo Logic. 
 
 
 ## <a id='create-tile'></a> Install and Configure the Tile
@@ -20,9 +20,9 @@ Before you install the Sumo Logic Nozzle for Pivotal Platform tile:
          
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.         
             
-1. Under the **Import a Product** button, click **+** next to the version number of Sumo Logic Nozzle for Pivotal Platform. This adds the tile to your staging area.
+1. Under the **Import a Product** button, click **+** next to the version number of Sumo Logic Nozzle for VMware Tanzu. This adds the tile to your staging area.
 
-1. Click the newly added Sumo Logic Nozzle for Pivotal Platform tile to access the configuration settings.
+1. Click the newly added Sumo Logic Nozzle for VMware Tanzu tile to access the configuration settings.
 
     <%= image_tag("SumoTile1.png") %>
 
@@ -32,7 +32,7 @@ Before you install the Sumo Logic Nozzle for Pivotal Platform tile:
 	3. Click **Save**.
 
 1. Configure **Sumo Logic Settings**.
-	1.  **Sumo Logic Endpoint**: Click **Add**, then enter the endpoint that you configured when specifying Pivotal Platform as an [HTTP Source](https://help.sumologic.com/?cid=5084) for Sumo Logic. You can set up multiple endpoints with different settings (more below).
+	1.  **Sumo Logic Endpoint**: Click **Add**, then enter the endpoint that you configured when specifying VMware Tanzu as an [HTTP Source](https://help.sumologic.com/?cid=5084) for Sumo Logic. You can set up multiple endpoints with different settings (more below).
 	<%= image_tag("SumologicSettings.png") %> 
 	1. **Sumo Logic Post Minimum Delay**: Enter a time in milliseconds for the post minimum delay. The default is 2000ms.
 	1. (Optional) **Sumo Logic Category**: Specify a source category to call data with that specific metadata tag. For example, `MyOrg/MyCategory`.
